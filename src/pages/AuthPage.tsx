@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { LogIn, UserPlus, Send, CheckCircle2, Lock, Smartphone, AlertCircle, ShieldCheck, ChevronRight, Globe, ArrowLeft } from 'lucide-react';
