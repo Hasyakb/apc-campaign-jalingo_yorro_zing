@@ -1,20 +1,21 @@
 import express from "express";
 import cors from "cors";
-import cookieParser from "cookie-parser";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
-import multer from "multer";
-import pg from "pg";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
+import { createServer as createViteServer } from "vite";
+import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
+import bcrypt from "bcryptjs";
+import multer from "multer";
+import { existsSync, mkdirSync } from "fs";
+import pg from "pg";
 
 const { Pool } = pg;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Use PORT from environment variable for Render compatibility
-const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "apc-campaign-secret-2026";
 const DATABASE_URL = process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3StnfOFAk9Wy@ep-sparkling-wind-abq1nqcv-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require";
 const CONFIG_PATH = path.join(process.cwd(), "db_config.json");
@@ -40,6 +41,7 @@ let pool = new Pool({
 
 async function startServer() {
   const app = express();
+  const PORT = 3000;
 
   // Initialize Database Tables
   async function initDb() {
@@ -857,10 +859,8 @@ async function startServer() {
     });
   }
 
-  // Listen on all network interfaces with Render-compatible port
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`Command Center Uplink established at http://localhost:${PORT}`);
-    console.log(`Server is running on port ${PORT} with NODE_ENV=${process.env.NODE_ENV || 'development'}`);
   });
 }
 
