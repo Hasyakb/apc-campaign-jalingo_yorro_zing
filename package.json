@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "tsc && vite build",
-    "start": "node dist/server.js",
+    "build": "vite build",
+    "start": "npx tsx server.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -65,7 +65,7 @@
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "vite": "^7.0.4",
+    "vite": "^5.4.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/multer": "^1.4.12",
-    "@types/node": "^22.14.1",
+    "@types/node": "^20.18.0",
     "@types/pg": "^8.11.12",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
