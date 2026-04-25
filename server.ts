@@ -41,7 +41,7 @@ let pool = new Pool({
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+  const PORT = 10000;
 
   // Initialize Database Tables
   async function initDb() {
