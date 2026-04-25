@@ -1,16 +1,13 @@
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "strict": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "outDir": "dist",
-    "rootDir": "."
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
   },
-  "include": ["src", "server.ts"],
-  "exclude": ["node_modules", "dist"]
-}
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
+});
