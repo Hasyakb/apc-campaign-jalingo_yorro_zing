@@ -1,18 +1,15 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import multer from "multer";
+import pg from "pg";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
-import { createServer as createViteServer } from "vite";
-import jwt from "jsonwebtoken";
-import cookieParser from "cookie-parser";
-import bcrypt from "bcryptjs";
-import multer from "multer";
-import { existsSync, mkdirSync } from "fs";
-import pg from "pg";
 
 const { Pool } = pg;
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
