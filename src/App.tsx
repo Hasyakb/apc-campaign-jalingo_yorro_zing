@@ -14,7 +14,7 @@ import { SupportersHub } from './pages/SupportersHub';
 import { MediaCenter } from './pages/MediaCenter';
 import api from './lib/api';
 import { UserCheck, ShieldAlert, Clock, RefreshCw, LogOut } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from "framer-motion";
 
 const AppContent: React.FC = () => {
   const { user, loading, fetchMe, logout } = useAuth();
