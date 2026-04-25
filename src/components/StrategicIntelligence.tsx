@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Brain, Zap, Target, ArrowRight, TrendingUp, ShieldCheck } from 'lucide-react';
 
 interface StrategicIntelligenceProps {
