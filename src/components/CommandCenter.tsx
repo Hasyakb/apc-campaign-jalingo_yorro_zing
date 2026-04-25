@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, User, Calendar, MessageSquare, Terminal, X, ChevronRight, Bell, Heart, Video, Film } from 'lucide-react';
+import { Search, User, Calendar, MessageSquare, Terminal, X, ChevronRight, Bell, Heart, Video } from 'lucide-react';
 import api from '../lib/api';
 
 interface CommandCenterProps {
@@ -12,7 +12,6 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({ onNavigate }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<any>(null);
   const [loading, setLoading] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -115,7 +114,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({ onNavigate }) => {
                             { label: 'Personnel Management', icon: User, id: 'users' },
                             { label: 'Tactical Comms', icon: MessageSquare, id: 'messages' },
                             { label: 'Strategic Events', icon: Calendar, id: 'events' },
-                             { label: 'Media Intelligence', icon: Video, id: 'media' },
+                            { label: 'Media Intelligence', icon: Video, id: 'media' },
                             { label: 'Feedback & Intel', icon: Bell, id: 'feedback' },
                             { label: 'Supporters Hub', icon: Heart, id: 'hub' },
                           ].map(item => (
